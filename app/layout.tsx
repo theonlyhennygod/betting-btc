@@ -13,7 +13,23 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Bolt Bets | Bitcoin Lightning Sports Betting",
   description: "Decentralized, non-custodial sports betting platform powered by Bitcoin Lightning Network",
-    generator: 'v0.dev'
+  keywords: "bitcoin, lightning network, sports betting, decentralized betting, non-custodial, crypto betting",
+  authors: [{ name: "Bolt Bets" }],
+  openGraph: {
+    title: "Bolt Bets | Bitcoin Lightning Sports Betting",
+    description: "Decentralized, non-custodial sports betting platform powered by Bitcoin Lightning Network",
+    type: "website",
+    locale: "en_US",
+    siteName: "Bolt Bets",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bolt Bets | Bitcoin Lightning Sports Betting",
+    description: "Decentralized, non-custodial sports betting platform powered by Bitcoin Lightning Network",
+  },
+  robots: "index, follow",
+  viewport: "width=device-width, initial-scale=1",
+  themeColor: "#000000",
 }
 
 export default function RootLayout({
