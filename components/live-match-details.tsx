@@ -15,6 +15,7 @@ interface LiveMatchDetailsProps {
 }
 
 export function LiveMatchDetails({ match }: LiveMatchDetailsProps) {
+  const [isClient, setIsClient] = useState(false);
   const [isPlaying, setIsPlaying] = useState(true)
   const [isMuted, setIsMuted] = useState(true)
   const [isFullscreen, setIsFullscreen] = useState(false)
@@ -59,8 +60,15 @@ export function LiveMatchDetails({ match }: LiveMatchDetailsProps) {
   const [awayScore, setAwayScore] = useState(match.awayScore || 0)
 
   useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isClient) {
+      return;
+    }
+
     const interval = setInterval(() => {
-      // 10% chance to update score
       if (Math.random() > 0.9) {
         if (Math.random() > 0.5) {
           setHomeScore((prev) => prev + 1)
@@ -71,7 +79,7 @@ export function LiveMatchDetails({ match }: LiveMatchDetailsProps) {
     }, 30000)
 
     return () => clearInterval(interval)
-  }, [])
+  }, [isClient]);
 
   return (
     <div className="space-y-4">
