@@ -14,6 +14,7 @@ export const sportFixtures: Record<string, Match[]> = {
       awayOdds: "1.85",
       homeTeamLogoUrl: "/images/lakers.webp",
       awayTeamLogoUrl: "/images/celtics.webp"
+
     },
     {
       id: "nba-2",
@@ -26,6 +27,7 @@ export const sportFixtures: Record<string, Match[]> = {
       awayOdds: "2.10",
       homeTeamLogoUrl: "/images/goldenstate.webp",
       awayTeamLogoUrl: "/images/bucks.webp"
+   
     },
     {
       id: "nba-3",
@@ -128,6 +130,7 @@ export const sportFixtures: Record<string, Match[]> = {
       awayOdds: "3.10",
       homeTeamLogoUrl: "/images/arsenal.png",
       awayTeamLogoUrl: "/images/chelsea.png"
+
     },
     {
       id: "soccer-2",
@@ -140,6 +143,7 @@ export const sportFixtures: Record<string, Match[]> = {
       awayOdds: "2.70",
       homeTeamLogoUrl: "/images/barcelona.svg.webp",
       awayTeamLogoUrl: "/images/realmadrid.webp"
+
     },
     {
       id: "soccer-3",
@@ -152,6 +156,7 @@ export const sportFixtures: Record<string, Match[]> = {
       awayOdds: "2.40",
       homeTeamLogoUrl: "/images/liverpool.png",
       awayTeamLogoUrl: "/images/manchester.png"
+
     },
   ],
 }

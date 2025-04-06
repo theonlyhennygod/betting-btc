@@ -13,6 +13,7 @@ export interface Match {
   quarter?: number
   homeTeamLogoUrl?: string
   awayTeamLogoUrl?: string
+
 }
 
 export interface FeaturedBet {

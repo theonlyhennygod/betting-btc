@@ -324,7 +324,7 @@ const handlePlaceBet = async () => {
 
           <div className="grid grid-cols-3 gap-2">
             <div className="flex flex-col items-center text-center">
-                           <div className="w-12 h-12 bg-zinc-800 rounded-full flex items-center justify-center mb-2 overflow-hidden">
+              <div className="w-12 h-12 bg-zinc-800 rounded-full flex items-center justify-center mb-2 overflow-hidden">
                 <Image 
                   src={match.homeTeamLogoUrl || `/placeholder.svg?height=48&width=48`}
                   alt={match.homeTeam}
