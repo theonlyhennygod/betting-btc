@@ -76,25 +76,68 @@ export function LiveMatchDetails({ match }: LiveMatchDetailsProps) {
   return (
     <div className="space-y-4">
       <div ref={videoContainerRef} className="relative aspect-video bg-black rounded-lg overflow-hidden">
-        {/* Video player */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <Image
-            src="/placeholder.svg?height=720&width=1280"
-            alt="Live stream"
-            width={1280}
-            height={720}
-            className="w-full h-full object-cover"
-          />
+        {/* Conditional Video Player */}
+        <div className="absolute inset-0">
+          {match.id === "live-1" ? (
+            // Specific iframe for Knicks vs Bulls
+            <iframe 
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/z3gNzxyyDYI?si=uSyF2IHX35LzGlQ7" 
+              title="YouTube video player (Knicks vs Bulls)" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerPolicy="strict-origin-when-cross-origin" 
+              allowFullScreen
+            ></iframe>
+          ) : match.id === "live-2" ? (
+            // Specific iframe for Man United vs Tottenham
+            <iframe 
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/WcI_hFXVrvc?si=H2gNk3bwKss-LS_Q" 
+              title="YouTube video player (Man United vs Tottenham)" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerPolicy="strict-origin-when-cross-origin" 
+              allowFullScreen
+            ></iframe>
+          ) : match.id === "live-3" ? (
+            // Specific iframe for Suns vs Nuggets
+            <iframe 
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/M77ddPuIs_A?si=Q07emtyy06E54iWg"
+              title="YouTube video player (Suns vs Nuggets)"
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerPolicy="strict-origin-when-cross-origin" 
+              allowFullScreen
+            ></iframe>
+          ) : (
+            // Default iframe for other matches
+            <iframe 
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/1MAXIgtrDDM?si=-UhxLlODXnO1pKQF" // Default video
+              title="YouTube video player (Default)" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerPolicy="strict-origin-when-cross-origin" 
+              allowFullScreen
+            ></iframe>
+            // Placeholder alternative:
+            // <div className="w-full h-full bg-zinc-900 flex items-center justify-center text-muted-foreground">
+            //   Live stream not available for this match.
+            // </div>
+          )}
 
-          {/* Overlay for when video is paused */}
-          {!isPlaying && (
+          {/* Overlay for when video is paused - This might not work directly with iframe */}
+          {/* Consider removing or adapting this based on iframe interaction limitations */}
+          {/*!isPlaying && (
             <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
               <div className="text-white text-center">
                 <Play className="h-16 w-16 mx-auto" />
                 <p className="mt-2">Click to resume</p>
               </div>
             </div>
-          )}
+          )*/}
 
           {/* Live indicator and score */}
           <div className="absolute top-4 left-4 flex items-center space-x-2">
@@ -147,4 +190,3 @@ export function LiveMatchDetails({ match }: LiveMatchDetailsProps) {
     </div>
   )
 }
-

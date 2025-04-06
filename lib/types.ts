@@ -11,6 +11,8 @@ export interface Match {
   awayScore?: number
   currentTime?: string
   quarter?: number
+  homeTeamLogoUrl?: string
+  awayTeamLogoUrl?: string
 }
 
 export interface FeaturedBet {
@@ -36,5 +38,19 @@ export interface FantasyPlayer {
   position: string
   price: number
   projectedPoints: number
+  imageUrl?: string | null
 }
 
+export interface Escrow {
+  id: string
+  matchId: string
+  userId: string
+  betAmount: number
+  selectedOutcome: string
+  odds: number
+  expiresAt: string
+  status: "pending" | "funded" | "disputed" | "resolved" | "expired"
+  outcome?: "home" | "away" | "draw" | "cancelled"
+  txid?: string
+  escrowAddress?: string
+}

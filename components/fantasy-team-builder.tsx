@@ -19,6 +19,7 @@ interface Player {
   price: number
   projectedPoints: number
   selected: boolean
+    imageUrl?: string | null
 }
 
 export function FantasyTeamBuilder() {
@@ -192,8 +193,19 @@ export function FantasyTeamBuilder() {
                       className="flex items-center justify-between p-3 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-colors"
                     >
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-zinc-800 rounded-full flex items-center justify-center">
-                          <Image src={`/placeholder.svg?height=40&width=40`} alt={player.name} width={24} height={24} />
+
+                                        <div className="w-10 h-10 bg-zinc-800 rounded-full flex items-center justify-center overflow-hidden">
+                          <Image 
+                            src={player.imageUrl || `/placeholder.svg?height=40&width=40`}
+                            alt={player.name}
+                            width={40}
+                            height={40}
+                            className="object-cover"
+                          />
+
+
+                        {/* <div className="w-10 h-10 bg-zinc-800 rounded-full flex items-center justify-center">
+                          <Image src={`/placeholder.svg?height=40&width=40`} alt={player.name} width={24} height={24} /> */}
                         </div>
                         <div>
                           <div className="text-sm font-medium">{player.name}</div>

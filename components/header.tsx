@@ -17,8 +17,29 @@ import { useWalletAuth } from "@/hooks/use-wallet-auth"
 import { UserRewardsDropdown } from "@/components/user-rewards-dropdown"
 
 export default function Header() {
-  const { isAuthenticated, login: connectWallet, logout: disconnectWallet, satBalance } = useWalletAuth()
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+const { isAuthenticated, login, logout: disconnectWallet, satBalance } = useWalletAuth()
+const [isMenuOpen, setIsMenuOpen] = useState(false)
+const [isConnecting, setIsConnecting] = useState(false)
+
+// Create a wrapper function with a different name
+const handleConnectWallet = async () => {
+  setIsConnecting(true)
+  try {
+    await login() // Call the login function from your context
+  } catch (error) {
+    console.error("Failed to connect wallet:", error)
+    // toast({
+    //   variant: "destructive",
+    //   title: "Connection failed",
+    //   description: "Could not connect to your Lightning wallet"
+    // })
+  } finally {
+    setIsConnecting(false)
+  }
+}
+
+
+
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-zinc-800 bg-black/80 backdrop-blur-sm">
@@ -26,7 +47,7 @@ export default function Header() {
         <div className="flex items-center gap-6">
           <Link href="/" className="flex items-center gap-2">
             <Bitcoin className="h-6 w-6 text-amber-500" />
-            <span className="text-lg font-bold">LightningBets</span>
+            <span className="text-lg font-bold">BitBet</span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-6">
@@ -135,12 +156,25 @@ export default function Header() {
             </>
           ) : (
             <Button
-              onClick={connectWallet}
-              className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700"
-            >
-              <Wallet className="h-4 w-4 mr-2" />
-              Connect Wallet
-            </Button>
+                onClick={handleConnectWallet}
+                className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700"
+                disabled={isConnecting}
+              >
+                {isConnecting ? (
+                  <>
+                    <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Connecting...
+                  </>
+                ) : (
+                  <>
+                    <Wallet className="h-4 w-4 mr-2" />
+                    Connect Wallet
+                  </>
+                )}
+              </Button>
           )}
 
           <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
