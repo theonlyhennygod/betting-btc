@@ -6,15 +6,15 @@ Decentralized, non-custodial sports betting platform powered by Bitcoin Lightnin
 
 **Home Page:**
 
-![Home Page Screenshot](/home.png)
+![Home Page Screenshot](/public/home.png)
 
 **Live Game View:**
 
-![Game Page Screenshot](/game.png)
+![Game Page Screenshot](/public/game.png)
 
 ## Architecture
 
-![Architecture Diagram](/architecture.png)
+![Architecture Diagram](/public/architecture.png)
 
 ## Features
 
