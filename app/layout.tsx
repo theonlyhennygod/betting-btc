@@ -11,20 +11,20 @@ import { AnimatedTicker } from "@/components/animated-ticker"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Bolt Bets | Bitcoin Lightning Sports Betting",
+  title: "Bit Bet | Bitcoin Lightning Sports Betting",
   description: "Decentralized, non-custodial sports betting platform powered by Bitcoin Lightning Network",
   keywords: "bitcoin, lightning network, sports betting, decentralized betting, non-custodial, crypto betting",
-  authors: [{ name: "Bolt Bets" }],
+  authors: [{ name: "Bit Bet" }],
   openGraph: {
-    title: "Bolt Bets | Bitcoin Lightning Sports Betting",
+    title: "Bit Bet | Bitcoin Lightning Sports Betting",
     description: "Decentralized, non-custodial sports betting platform powered by Bitcoin Lightning Network",
     type: "website",
     locale: "en_US",
-    siteName: "Bolt Bets",
+    siteName: "Bit Bet",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bolt Bets | Bitcoin Lightning Sports Betting",
+    title: "Bit Bet | Bitcoin Lightning Sports Betting",
     description: "Decentralized, non-custodial sports betting platform powered by Bitcoin Lightning Network",
   },
   robots: "index, follow",

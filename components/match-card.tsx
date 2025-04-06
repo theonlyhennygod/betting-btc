@@ -151,8 +151,14 @@ export function MatchCard({ match }: MatchCardProps) {
 
           <div className="grid grid-cols-3 gap-2">
             <div className="flex flex-col items-center text-center">
-              <div className="w-12 h-12 bg-zinc-800 rounded-full flex items-center justify-center mb-2">
-                <Image src={`/placeholder.svg?height=48&width=48`} alt={match.homeTeam} width={32} height={32} />
+              <div className="w-12 h-12 bg-zinc-800 rounded-full flex items-center justify-center mb-2 overflow-hidden">
+                <Image 
+                  src={match.homeTeamLogoUrl || `/placeholder.svg?height=48&width=48`}
+                  alt={match.homeTeam}
+                  width={match.homeTeamLogoUrl ? 48 : 32}
+                  height={match.homeTeamLogoUrl ? 48 : 32}
+                  className={match.homeTeamLogoUrl ? "w-full h-full object-contain" : ""}
+                />
               </div>
               <span className="text-sm font-medium">{match.homeTeam}</span>
             </div>
@@ -261,8 +267,14 @@ export function MatchCard({ match }: MatchCardProps) {
             </div>
 
             <div className="flex flex-col items-center text-center">
-              <div className="w-12 h-12 bg-zinc-800 rounded-full flex items-center justify-center mb-2">
-                <Image src={`/placeholder.svg?height=48&width=48`} alt={match.awayTeam} width={32} height={32} />
+              <div className="w-12 h-12 bg-zinc-800 rounded-full flex items-center justify-center mb-2 overflow-hidden">
+                <Image 
+                  src={match.awayTeamLogoUrl || `/placeholder.svg?height=48&width=48`}
+                  alt={match.awayTeam}
+                  width={match.awayTeamLogoUrl ? 48 : 32}
+                  height={match.awayTeamLogoUrl ? 48 : 32}
+                  className={match.awayTeamLogoUrl ? "w-full h-full object-contain" : ""}
+                />
               </div>
               <span className="text-sm font-medium">{match.awayTeam}</span>
             </div>

@@ -12,6 +12,8 @@ export const sportFixtures: Record<string, Match[]> = {
       homeOdds: "1.95",
       drawOdds: "15.00",
       awayOdds: "1.85",
+      homeTeamLogoUrl: "/images/lakers.webp",
+      awayTeamLogoUrl: "/images/celtics.webp"
     },
     {
       id: "nba-2",
@@ -22,6 +24,8 @@ export const sportFixtures: Record<string, Match[]> = {
       homeOdds: "1.75",
       drawOdds: "15.00",
       awayOdds: "2.10",
+      homeTeamLogoUrl: "/images/goldenstate.webp",
+      awayTeamLogoUrl: "/images/bucks.webp"
     },
     {
       id: "nba-3",
@@ -32,6 +36,8 @@ export const sportFixtures: Record<string, Match[]> = {
       homeOdds: "2.20",
       drawOdds: "15.00",
       awayOdds: "1.65",
+      homeTeamLogoUrl: "/images/nets.webp",
+      awayTeamLogoUrl: "/images/miami.png"
     },
   ],
   nfl: [
@@ -44,6 +50,8 @@ export const sportFixtures: Record<string, Match[]> = {
       homeOdds: "1.90",
       drawOdds: "12.00",
       awayOdds: "1.90",
+      homeTeamLogoUrl: "/images/chiefs.webp",
+      awayTeamLogoUrl: "/images/ravens.png"
     },
     {
       id: "nfl-2",
@@ -54,6 +62,8 @@ export const sportFixtures: Record<string, Match[]> = {
       homeOdds: "2.05",
       drawOdds: "12.00",
       awayOdds: "1.80",
+      homeTeamLogoUrl: "/images/eagles.png",
+      awayTeamLogoUrl: "/images/cowboys.png"
     },
     {
       id: "nfl-3",
@@ -64,6 +74,8 @@ export const sportFixtures: Record<string, Match[]> = {
       homeOdds: "1.75",
       drawOdds: "12.00",
       awayOdds: "2.15",
+      homeTeamLogoUrl: "/images/49ers.png",
+      awayTeamLogoUrl: "/images/packers.webp"
     },
   ],
   mlb: [
@@ -76,6 +88,8 @@ export const sportFixtures: Record<string, Match[]> = {
       homeOdds: "1.85",
       drawOdds: "8.50",
       awayOdds: "1.95",
+      homeTeamLogoUrl: "/images/yankees.png",
+      awayTeamLogoUrl: "/images/redsox.png"
     },
     {
       id: "mlb-2",
@@ -86,6 +100,8 @@ export const sportFixtures: Record<string, Match[]> = {
       homeOdds: "1.70",
       drawOdds: "8.50",
       awayOdds: "2.20",
+      homeTeamLogoUrl: "/images/dodgers.webp",
+      awayTeamLogoUrl: null
     },
     {
       id: "mlb-3",
@@ -96,6 +112,8 @@ export const sportFixtures: Record<string, Match[]> = {
       homeOdds: "2.10",
       drawOdds: "8.50",
       awayOdds: "1.75",
+      homeTeamLogoUrl: "/images/cubs.webp",
+      awayTeamLogoUrl: "/images/cardinals.png"
     },
   ],
   soccer: [
@@ -108,6 +126,8 @@ export const sportFixtures: Record<string, Match[]> = {
       homeOdds: "2.20",
       drawOdds: "3.40",
       awayOdds: "3.10",
+      homeTeamLogoUrl: "/images/arsenal.png",
+      awayTeamLogoUrl: "/images/chelsea.png"
     },
     {
       id: "soccer-2",
@@ -118,6 +138,8 @@ export const sportFixtures: Record<string, Match[]> = {
       homeOdds: "2.50",
       drawOdds: "3.30",
       awayOdds: "2.70",
+      homeTeamLogoUrl: "/images/barcelona.svg.webp",
+      awayTeamLogoUrl: "/images/realmadrid.webp"
     },
     {
       id: "soccer-3",
@@ -128,6 +150,8 @@ export const sportFixtures: Record<string, Match[]> = {
       homeOdds: "2.80",
       drawOdds: "3.40",
       awayOdds: "2.40",
+      homeTeamLogoUrl: "/images/liverpool.png",
+      awayTeamLogoUrl: "/images/manchester.png"
     },
   ],
 }
@@ -302,100 +326,112 @@ export const parlayOptions: ParlayOption[] = [
 // Sample data for fantasy players
 export const fantasyPlayers: FantasyPlayer[] = [
   {
-    id: "player-1",
+    id: "fp-1",
     name: "Patrick Mahomes",
     team: "Chiefs",
     position: "QB",
     price: 25000,
     projectedPoints: 24.5,
+    imageUrl: "/images/patrick.png"
   },
   {
-    id: "player-2",
+    id: "fp-2",
     name: "Josh Allen",
     team: "Bills",
     position: "QB",
     price: 23000,
     projectedPoints: 22.8,
+    imageUrl: "/images/josh.png"
   },
   {
-    id: "player-3",
+    id: "fp-3",
     name: "Lamar Jackson",
     team: "Ravens",
     position: "QB",
     price: 22000,
     projectedPoints: 23.2,
+    imageUrl: "/images/lamar.png"
   },
   {
-    id: "player-4",
+    id: "fp-4",
     name: "Christian McCaffrey",
     team: "49ers",
     position: "RB",
     price: 28000,
     projectedPoints: 25.7,
+    imageUrl: "/images/christian.png"
   },
   {
-    id: "player-5",
+    id: "fp-5",
     name: "Derrick Henry",
     team: "Ravens",
     position: "RB",
     price: 24000,
     projectedPoints: 20.3,
+    imageUrl: "/images/derrick.png"
   },
   {
-    id: "player-6",
+    id: "fp-6",
     name: "Saquon Barkley",
     team: "Eagles",
     position: "RB",
     price: 21000,
-    projectedPoints: 18.5,
+    projectedPoints: 19.5,
+    imageUrl: "/images/saquan.png"
   },
   {
-    id: "player-7",
-    name: "Justin Jefferson",
-    team: "Vikings",
-    position: "WR",
-    price: 26000,
-    projectedPoints: 21.9,
-  },
-  {
-    id: "player-8",
-    name: "Tyreek Hill",
-    team: "Dolphins",
-    position: "WR",
-    price: 25000,
-    projectedPoints: 20.8,
-  },
-  {
-    id: "player-9",
+    id: "fp-7",
     name: "CeeDee Lamb",
     team: "Cowboys",
     position: "WR",
-    price: 23000,
-    projectedPoints: 19.5,
+    price: 26000,
+    projectedPoints: 21.8,
+    imageUrl: "/images/ceedee.png"
   },
   {
-    id: "player-10",
+    id: "fp-8",
+    name: "Tyreek Hill",
+    team: "Dolphins",
+    position: "WR",
+    price: 27000,
+    projectedPoints: 22.5,
+    imageUrl: "/images/tyreke.png"
+  },
+  {
+    id: "fp-9",
+    name: "Justin Jefferson",
+    team: "Vikings",
+    position: "WR",
+    price: 29000,
+    projectedPoints: 23.0,
+    imageUrl: "/images/justinjefferson.png"
+  },
+  {
+    id: "fp-10",
     name: "Travis Kelce",
     team: "Chiefs",
     position: "TE",
     price: 20000,
-    projectedPoints: 16.7,
+    projectedPoints: 18.5,
+    imageUrl: "/images/travis.png"
   },
   {
-    id: "player-11",
+    id: "fp-11",
     name: "George Kittle",
     team: "49ers",
     position: "TE",
     price: 18000,
-    projectedPoints: 14.3,
+    projectedPoints: 16.2,
+    imageUrl: "/images/george.png"
   },
   {
-    id: "player-12",
+    id: "fp-12",
     name: "Mark Andrews",
     team: "Ravens",
     position: "TE",
-    price: 16000,
-    projectedPoints: 13.8,
+    price: 19000,
+    projectedPoints: 17.0,
+    imageUrl: "/images/mark.png"
   },
 ]
 

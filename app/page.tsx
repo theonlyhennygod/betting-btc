@@ -7,6 +7,7 @@ import { FeaturedBets } from "@/components/featured-bets"
 import { HeroSection } from "@/components/hero-section"
 import { BettingPools } from "@/components/betting-pools"
 import { FantasyTeamBuilder } from "@/components/fantasy-team-builder"
+import { TheSportsDbEvents } from "@/components/the-sports-db-events"
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         </TabsList>
         <TabsContent value="upcoming" className="space-y-4 mt-4">
           <UpcomingMatches />
+          <TheSportsDbEvents />
         </TabsContent>
         <TabsContent value="live" className="space-y-4 mt-4">
           <LiveMatches />
@@ -41,8 +43,8 @@ export default function Home() {
         <div>
           <Card className="bg-black/40 border-zinc-800">
             <CardHeader>
-              <CardTitle>Why Bolt Bets?</CardTitle>
-              <CardDescription>Bitcoin-native sports betting</CardDescription>
+              <CardTitle>Why Bit Bet?</CardTitle>
+              <CardDescription>Experience the future of sports betting</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-start space-x-3">
